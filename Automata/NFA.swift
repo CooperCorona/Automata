@@ -11,6 +11,9 @@ import Foundation
 ///Represents a non-deterministic finite automata.
 public struct NFA: Automata {
     
+    ///Unicode for the Greek letter epsilon.
+    private static let epsilon = "\u{03B5}"
+    
     ///The states comprising the automata. The key is
     ///the identifier of the state.
     public let states:[String:NFAState]
@@ -74,7 +77,8 @@ public struct NFA: Automata {
     public static func epsilon(states:[String:NFAState], for state:NFAState, recursive:Bool) -> [NFAState] {
         let emptyString = state.edges[""]?.flatMap() { states[$0] } ?? []
         let epsilonString = state.edges["\\epsilon"]?.flatMap() { states[$0] } ?? []
-        let epsilonStates = emptyString + epsilonString
+        let unicodeEpsilonString = state.edges[NFA.epsilon]?.flatMap() { states[$0] } ?? []
+        let epsilonStates = emptyString + epsilonString + unicodeEpsilonString
         if recursive {
             return epsilonStates + epsilonStates.flatMap() { NFA.epsilon(states: states, for: $0, recursive: recursive) }
         } else {
