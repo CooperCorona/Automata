@@ -7,7 +7,25 @@
 		<key>Automata.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>2</integer>
+		</dict>
+		<key>AutomataTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>DCD4E1931F886BB60026BC74</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DCD4E19C1F886BB60026BC74</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
