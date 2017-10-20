@@ -13,7 +13,7 @@ import CoronaConvenience
 enum AutomataParserError: Error {
     ///Represents the error in which a line is malformatted.
     ///The associated value is the line number (0-indexed).
-    case Malformatted(Int)
+    case Malformatted(String, Int)
 }
 
 ///Parses an automata grammar into an Automata instance.
@@ -40,6 +40,17 @@ public struct AutomataParser {
         var edge:String
         ///The output of the transition.
         var state:String
+    }
+    
+    ///Represents the result of parsing individual transition=output pairs
+    /// of a PDA.
+    private struct PDAEdgeResult {
+        ///The input of the transition.
+        var edge:String
+        ///The string to push onto the stack (can be epsilon).
+        var push:String
+        ///The string to pop from the stack (can be epsilon).
+        var pop:String
     }
     
     ///Represents the result of parsing individual states.
@@ -87,7 +98,7 @@ public struct AutomataParser {
         return DFA(states: states)
     }
     
-    ///Parses an array of lines (each line reprenting a state) into a NFA instance.
+    ///Parses an array of lines (each line representing a state) into a NFA instance.
     ///- parameter lines: An array of lines with each line representing an individual state.
     ///The first element in the array is considered the start state.
     ///- returns: An NFA instance corresponding to the given lines.
@@ -102,13 +113,29 @@ public struct AutomataParser {
         return NFA(states: states)
     }
     
+    ///Parsers an array of lines (each line representing a state) into a PDA instance.
+    ///- parameter lines: An array of lines with each line representing an individual state.
+    ///The first element in the array is considered the start state.
+    ///- returns: A PDA instance coresponding to the given lines.
+    public func parsePDA(lines:[String]) throws -> PDA {
+        let results = try self.parse(lines: lines)
+        var states = results.map() { PDAState(identifier: $0.state, isFinal: $0.matches(.final)) }
+        for (i, result) in results.enumerated() {
+            for edge in result.edges {
+                let edgeResult = try self.parse(pdaEdge: edge.edge, number: i)
+                states[i].add(edge: edgeResult.edge, pop: edgeResult.pop, push: edgeResult.push, to: edge.state)
+            }
+        }
+        return PDA(states: states)
+    }
+    
     ///Parses a line into a LineResult instance.
     ///- parameter line: The line to parse.
     ///- parameter number: The line number (assumed to be 0-indexed).
     ///- returns: A LineResult instance corresponding to the given line.
     private func parse(line:String, number:Int) throws -> LineResult {
         guard let result = line.match("^(.+?)\\s*(\\(.+?\\))?:\\s*(.*?)$") else {
-            throw AutomataParserError.Malformatted(number)
+            throw AutomataParserError.Malformatted(line, number)
         }
         let identifier = result[0]
         let annotations:[String]
@@ -140,6 +167,16 @@ public struct AutomataParser {
             let comps = $0.components(separatedBy: "=")
             return EdgeResult(edge: comps[0], state: comps[1])
         }
+    }
+    
+    private func parse(pdaEdge:String, number:Int) throws -> PDAEdgeResult {
+        guard let result = pdaEdge.match("^(.+?),(.+?)->(.+?)$") else {
+            throw AutomataParserError.Malformatted(pdaEdge, number)
+        }
+        let edge = result.groups[0]
+        let pop = result.groups[1]
+        let push = result.groups[2]
+        return PDAEdgeResult(edge: edge, push: push, pop: pop)
     }
     
 }

@@ -11,8 +11,8 @@ import Foundation
 ///Represents a non-deterministic finite automata.
 public struct NFA: Automata {
     
-    ///Unicode for the Greek letter epsilon.
-    private static let epsilon = "\u{03B5}"
+    ///Valid strings representing an epsilon transition.
+    public static let epsilons = ["", "\\epsilon", "\u{03B5}"]
     
     ///The states comprising the automata. The key is
     ///the identifier of the state.
@@ -29,7 +29,7 @@ public struct NFA: Automata {
             } else {
                 return a.identifier < b.identifier
             }
-            } .map() { "\($0)" } .joined(separator: "\n")
+        } .map() { "\($0)" } .joined(separator: "\n")
     }
     
     ///Returns true if this automata accepts a given input string, false otherwise.
@@ -75,14 +75,15 @@ public struct NFA: Automata {
     ///- parameter recursive: Whether to access the epsilon transitions
     ///of the output states, recursively.
     public static func epsilon(states:[String:NFAState], for state:NFAState, recursive:Bool) -> [NFAState] {
-        let emptyString = state.edges[""]?.flatMap() { states[$0] } ?? []
-        let epsilonString = state.edges["\\epsilon"]?.flatMap() { states[$0] } ?? []
-        let unicodeEpsilonString = state.edges[NFA.epsilon]?.flatMap() { states[$0] } ?? []
-        let epsilonStates = emptyString + epsilonString + unicodeEpsilonString
+        let epsilonStates = NFA.epsilons.flatMap() { state.edges[$0]?.flatMap() { states[$0] } ?? [] }
         if recursive {
             return epsilonStates + epsilonStates.flatMap() { NFA.epsilon(states: states, for: $0, recursive: recursive) }
         } else {
             return epsilonStates
         }
+    }
+    
+    public static func isEpsilon(_ string:String) -> Bool {
+        return NFA.epsilons.contains(string)
     }
 }

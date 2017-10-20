@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		DC0C75FA1F8C3CAA00C7F47C /* DFATest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0C75F91F8C3CAA00C7F47C /* DFATest.swift */; };
+		DC3BB43F1F9670880009B0F4 /* PDA.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3BB43E1F9670880009B0F4 /* PDA.swift */; };
+		DC3BB4431F96708F0009B0F4 /* PDAState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3BB4421F96708F0009B0F4 /* PDAState.swift */; };
+		DC3BB4451F96760F0009B0F4 /* PDATransitionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3BB4441F96760F0009B0F4 /* PDATransitionInput.swift */; };
 		DC416DC51F890FC200C6F980 /* NFAConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC416DC41F890FC200C6F980 /* NFAConverter.swift */; };
 		DC416DC71F890FD100C6F980 /* DFAMinimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC416DC61F890FD100C6F980 /* DFAMinimizer.swift */; };
 		DC9C67DA1F8D51300052351F /* NFATest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C67D91F8D51300052351F /* NFATest.swift */; };
@@ -53,6 +56,9 @@
 
 /* Begin PBXFileReference section */
 		DC0C75F91F8C3CAA00C7F47C /* DFATest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFATest.swift; sourceTree = "<group>"; };
+		DC3BB43E1F9670880009B0F4 /* PDA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDA.swift; sourceTree = "<group>"; };
+		DC3BB4421F96708F0009B0F4 /* PDAState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDAState.swift; sourceTree = "<group>"; };
+		DC3BB4441F96760F0009B0F4 /* PDATransitionInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDATransitionInput.swift; sourceTree = "<group>"; };
 		DC416DC41F890FC200C6F980 /* NFAConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFAConverter.swift; sourceTree = "<group>"; };
 		DC416DC61F890FD100C6F980 /* DFAMinimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFAMinimizer.swift; sourceTree = "<group>"; };
 		DC9C67D91F8D51300052351F /* NFATest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFATest.swift; sourceTree = "<group>"; };
@@ -144,6 +150,9 @@
 				DCD4E1B41F886BEA0026BC74 /* NFA.swift */,
 				DC416DC41F890FC200C6F980 /* NFAConverter.swift */,
 				DCD4E1BA1F886C0C0026BC74 /* NFAState.swift */,
+				DC3BB43E1F9670880009B0F4 /* PDA.swift */,
+				DC3BB4421F96708F0009B0F4 /* PDAState.swift */,
+				DC3BB4441F96760F0009B0F4 /* PDATransitionInput.swift */,
 				DCD4E1B61F886C040026BC74 /* Parser.swift */,
 				DCB55D2E1F8BCFEC00C4D727 /* State.swift */,
 			);
@@ -297,8 +306,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCD4E1BD1F8876E10026BC74 /* AutomataError.swift in Sources */,
+				DC3BB4431F96708F0009B0F4 /* PDAState.swift in Sources */,
+				DC3BB43F1F9670880009B0F4 /* PDA.swift in Sources */,
 				DCD4E1B71F886C040026BC74 /* Parser.swift in Sources */,
 				DC416DC51F890FC200C6F980 /* NFAConverter.swift in Sources */,
+				DC3BB4451F96760F0009B0F4 /* PDATransitionInput.swift in Sources */,
 				DCB55D2F1F8BCFEC00C4D727 /* State.swift in Sources */,
 				DCD4E1BB1F886C0C0026BC74 /* NFAState.swift in Sources */,
 				DCD4E1B11F886BD60026BC74 /* Automata.swift in Sources */,
