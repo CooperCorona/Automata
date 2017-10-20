@@ -13,6 +13,7 @@
 		DC3BB4451F96760F0009B0F4 /* PDATransitionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3BB4441F96760F0009B0F4 /* PDATransitionInput.swift */; };
 		DC416DC51F890FC200C6F980 /* NFAConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC416DC41F890FC200C6F980 /* NFAConverter.swift */; };
 		DC416DC71F890FD100C6F980 /* DFAMinimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC416DC61F890FD100C6F980 /* DFAMinimizer.swift */; };
+		DC45D34D1F9A6FC10002C8FE /* PDATest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45D34C1F9A6FC10002C8FE /* PDATest.swift */; };
 		DC9C67DA1F8D51300052351F /* NFATest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C67D91F8D51300052351F /* NFATest.swift */; };
 		DC9C67DE1F8D57B10052351F /* DFAMinimizerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C67DD1F8D57B10052351F /* DFAMinimizerTest.swift */; };
 		DCB55D2F1F8BCFEC00C4D727 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCB55D2E1F8BCFEC00C4D727 /* State.swift */; };
@@ -61,6 +62,7 @@
 		DC3BB4441F96760F0009B0F4 /* PDATransitionInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDATransitionInput.swift; sourceTree = "<group>"; };
 		DC416DC41F890FC200C6F980 /* NFAConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFAConverter.swift; sourceTree = "<group>"; };
 		DC416DC61F890FD100C6F980 /* DFAMinimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFAMinimizer.swift; sourceTree = "<group>"; };
+		DC45D34C1F9A6FC10002C8FE /* PDATest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDATest.swift; sourceTree = "<group>"; };
 		DC9C67D91F8D51300052351F /* NFATest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFATest.swift; sourceTree = "<group>"; };
 		DC9C67DD1F8D57B10052351F /* DFAMinimizerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFAMinimizerTest.swift; sourceTree = "<group>"; };
 		DCB55D2E1F8BCFEC00C4D727 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				DC9C67DD1F8D57B10052351F /* DFAMinimizerTest.swift */,
 				DC0C75F91F8C3CAA00C7F47C /* DFATest.swift */,
 				DC9C67D91F8D51300052351F /* NFATest.swift */,
+				DC45D34C1F9A6FC10002C8FE /* PDATest.swift */,
 				DCD4E1A41F886BB60026BC74 /* Info.plist */,
 			);
 			path = AutomataTests;
@@ -331,6 +334,7 @@
 				DC9C67DA1F8D51300052351F /* NFATest.swift in Sources */,
 				DC0C75FA1F8C3CAA00C7F47C /* DFATest.swift in Sources */,
 				DCB55D3E1F8C347700C4D727 /* AutomataTestCase.swift in Sources */,
+				DC45D34D1F9A6FC10002C8FE /* PDATest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

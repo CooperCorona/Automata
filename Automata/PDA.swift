@@ -20,12 +20,13 @@ public struct PDA: Automata, CustomStringConvertible {
     ///determine if a given string is accepted. Like an NFA, a
     ///PDA has multiple potential branches that might have different
     ///stacks associated with them, so the stack must be stored, too.
-    private struct CurrentState {
+    private struct CurrentState: CustomStringConvertible {
         ///The state the PDA is currently on.
         var state:PDAState
         ///The value of the stack at the current state.
         var stack:[String]
         
+        var description: String { return "\(self.state.identifier) - \(self.stack)" }
     }
     
     ///The states comprising the automata. The key is
@@ -58,6 +59,7 @@ public struct PDA: Automata, CustomStringConvertible {
             return false
         }
         var currentStates = [CurrentState(state: initialState, stack: [])]
+        currentStates += self.epsilonStates(for: currentStates[0], recursive: true)
         for inputChar in string {
             let input = "\(inputChar)"
             currentStates = currentStates.flatMap() { (currentState:CurrentState) -> [CurrentState] in
@@ -66,7 +68,7 @@ public struct PDA: Automata, CustomStringConvertible {
                 return nextStates + epsilonStates
             }
         }
-        return false
+        return currentStates.reduce(false) { $0 || $1.state.isFinal }
     }
     
     private func next(state:CurrentState, for input:String, stack:[String]) -> [CurrentState] {
