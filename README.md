@@ -55,9 +55,9 @@ containing a pair of 1's separated by a positive even number of symbols (example
 1001, 1101, 1111, 010110 but not 11, 111, or 0101).
 
 ```
-1: \\epsilon,\\epsilon->$=2
-2: a,\\epsilon->A=2 b,\\epsilon->B=2 \\epsilon,\\epsilon->\\epsilon=3
-3: a,A->\\epsilon=3 b,B->\\epsilon=3 \\epsilon,$->\\epsilon=4
+1: \epsilon,\epsilon->$=2
+2: a,\epsilon->A=2 b,\epsilon->B=2 \epsilon,\epsilon->\epsilon=3
+3: a,A->\epsilon=3 b,B->\epsilon=3 \epsilon,$->\epsilon=4
 4 (Final):
 ```
 This grammar represents a PDA recognizing the language over alphabet {a, b} of even
