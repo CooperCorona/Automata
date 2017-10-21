@@ -30,7 +30,15 @@ list of input character - output state pairs joined by an =.
 In NFAs, epsilon transitions are represented by ```\epsilon``` or ```ε``` (this is designed to be consistent with LaTeX code).
 
 ### PDA
-Because PDAs include more than input characters for state transitions, the grammar is slightly different. Instead of ```input=output``` to represent which input character transitions to a given output state, PDA transitions are ```input,pop->push=output```. Input is the input character, pop is the character that must be popped from the top of the stack, push is the character that is pushed to the top of the stack, and output is resulting state.
+Because PDAs include more than input characters for state transitions, the grammar is slightly different. Instead of 
+
+```input=output```
+
+to represent which input character transitions to a given output state, PDA transitions are
+
+```input,pop->push=output```.
+
+Input is the input character, pop is the character that must be popped from the top of the stack, push is the character that is pushed to the top of the stack, and output is resulting state.
 
 ### Annotations
 * ```Final```: represents a state that should cause a string to be accepted.
