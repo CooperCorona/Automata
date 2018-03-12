@@ -11,6 +11,8 @@
 		DC3BB43F1F9670880009B0F4 /* PDA.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3BB43E1F9670880009B0F4 /* PDA.swift */; };
 		DC3BB4431F96708F0009B0F4 /* PDAState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3BB4421F96708F0009B0F4 /* PDAState.swift */; };
 		DC3BB4451F96760F0009B0F4 /* PDATransitionInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3BB4441F96760F0009B0F4 /* PDATransitionInput.swift */; };
+		DC4062132056C82300EE21B5 /* DFAComparer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC4062122056C82300EE21B5 /* DFAComparer.swift */; };
+		DC4062162056C87A00EE21B5 /* CoronaConvenience.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCB55D381F8BEBEB00C4D727 /* CoronaConvenience.framework */; };
 		DC416DC51F890FC200C6F980 /* NFAConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC416DC41F890FC200C6F980 /* NFAConverter.swift */; };
 		DC416DC71F890FD100C6F980 /* DFAMinimizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC416DC61F890FD100C6F980 /* DFAMinimizer.swift */; };
 		DC45D34D1F9A6FC10002C8FE /* PDATest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC45D34C1F9A6FC10002C8FE /* PDATest.swift */; };
@@ -60,6 +62,7 @@
 		DC3BB43E1F9670880009B0F4 /* PDA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDA.swift; sourceTree = "<group>"; };
 		DC3BB4421F96708F0009B0F4 /* PDAState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDAState.swift; sourceTree = "<group>"; };
 		DC3BB4441F96760F0009B0F4 /* PDATransitionInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDATransitionInput.swift; sourceTree = "<group>"; };
+		DC4062122056C82300EE21B5 /* DFAComparer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFAComparer.swift; sourceTree = "<group>"; };
 		DC416DC41F890FC200C6F980 /* NFAConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFAConverter.swift; sourceTree = "<group>"; };
 		DC416DC61F890FD100C6F980 /* DFAMinimizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DFAMinimizer.swift; sourceTree = "<group>"; };
 		DC45D34C1F9A6FC10002C8FE /* PDATest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDATest.swift; sourceTree = "<group>"; };
@@ -88,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC4062162056C87A00EE21B5 /* CoronaConvenience.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +151,7 @@
 				DCB55D301F8BEA4400C4D727 /* AutomataParser.swift */,
 				DCD4E1BC1F8876E10026BC74 /* AutomataError.swift */,
 				DCD4E1B21F886BDC0026BC74 /* DFA.swift */,
+				DC4062122056C82300EE21B5 /* DFAComparer.swift */,
 				DC416DC61F890FD100C6F980 /* DFAMinimizer.swift */,
 				DCD4E1B81F886C080026BC74 /* DFAState.swift */,
 				DCD4E1B41F886BEA0026BC74 /* NFA.swift */,
@@ -319,6 +324,7 @@
 				DCD4E1B11F886BD60026BC74 /* Automata.swift in Sources */,
 				DCB55D311F8BEA4400C4D727 /* AutomataParser.swift in Sources */,
 				DCD4E1B91F886C080026BC74 /* DFAState.swift in Sources */,
+				DC4062132056C82300EE21B5 /* DFAComparer.swift in Sources */,
 				DC416DC71F890FD100C6F980 /* DFAMinimizer.swift in Sources */,
 				DCD4E1B31F886BDC0026BC74 /* DFA.swift in Sources */,
 				DCD4E1B51F886BEA0026BC74 /* NFA.swift in Sources */,
